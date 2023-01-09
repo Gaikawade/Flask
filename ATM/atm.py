@@ -2,9 +2,9 @@ class Atm:
     def __init__(self):     # Constructor
         self.pin = 1234     # Given a default pin number
         self.balance = 0
-        self.menu()         # Calling the menu function as we create the instance of Atm class
+        self.menu()         # Function Call
 
-    def menu(self):
+    def menu(self):         # Function Defination
         user_input = input(
             """Hello, How would you like to proceed?
                        1. Enter 1 to create pin
@@ -15,7 +15,7 @@ class Atm:
                        6. Enter 6 to exit
                        """
         )
-
+        # Based on the user input calling the respective function
         if user_input == "1":
             self.create_pin()
         elif user_input == "2":
@@ -40,7 +40,7 @@ class Atm:
     # Deposit function
     def deposit(self):
         temp = int(input("Enter your PIN: "))
-        if temp == self.pin:
+        if temp == self.pin:        # Validating PIN
             amount = int(input("Enter Amount to deposit: "))
             self.balance = +amount
             print("Deposti Successful")
@@ -50,7 +50,7 @@ class Atm:
     # Withdraw function
     def withdraw(self):
         temp = int(input("Enter your PIN: "))
-        if temp == self.pin:
+        if temp == self.pin:        # Validating PIN
             amount = int(input("Enter Amount to withdraw: "))
             if amount <= self.balance:
                 self.balance -= amount
@@ -63,18 +63,18 @@ class Atm:
     # Check Balance Function
     def check_balance(self):
         temp = int(input("Enter your pin: "))
-        if temp == self.pin:
+        if temp == self.pin:        # Validating PIN
             print(f"Your have a balance of Rs.{self.balance}")
         else:
             print("Invalid pin")
 
     def change_pin(self):
         temp = int(input("Enter your PIN: "))
-        if temp == self.pin:
+        if temp == self.pin:        # Validating PIN
             new_pin = int(input("Enter New PIN: "))
             self.pin = new_pin
         else:
             print("Invalid PIN")
 
-
-hdfc = Atm()
+# Creating an instance of the Atm Class by the name person
+person = Atm()  # Object
