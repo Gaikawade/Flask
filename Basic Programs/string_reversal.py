@@ -6,4 +6,4 @@ def reverse(str):
 
 string = input("Enter a string: ")
 print(f'Actual String is {string!r}')
-print(f'Reveresed String is {reverse(string)!r}')
+print(f'Reveresed String is {reverse(string)!r}') 
