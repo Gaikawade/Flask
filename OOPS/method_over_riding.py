@@ -21,20 +21,20 @@ class Withdrawal(Transaction):
     def __init__(self, amount, account):
         self.amount = amount
         self.account = account
-        Transaction().__init__(self, account)
+        Transaction().__init__(self)
         self.execute()
 
     def execute(self):
-        if Transaction().account_balance < self.amount:
+        if Transaction().balance < self.amount:
             print("Insufficient funds")
             return
-        Transaction().account.balance -= self.amount
+        Transaction().balance -= self.amount
         print(f'Withdrawal of Rs.{self.amount} made from account {self.account}')
-        print(f'Balance Rs.{Transaction().account_balance}')
+        print(f'Balance Rs.{Transaction().balance}')
 
 tra  = Transaction(200)
 depo = Deposit(2000, 123456)
-# withd = Withdrawal(1000, 123456)
+withd = Withdrawal(1000, 123456)
 
 
 
